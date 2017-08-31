@@ -34,7 +34,7 @@ namespace Developer.Meter
         protected override void OnSceneGUI()
         {
             DrawPointers(script.pointers);
-        }//OnSceneGUI()_end
+        }
 
         protected void DrawPointers(Transform[] pointers)
         {
@@ -50,8 +50,8 @@ namespace Developer.Meter
                     DrawArrow(pointer.position, pointer.forward, arrowLength, nodeSize, "Axis", blue);
                     DrawArrow(pointer.position, pointer.up, areaRadius, nodeSize, string.Empty, blue);
                 }
-            }//foreach()_end
-        }//DrawPointers()_end
+            }
+        }
         #endregion
-    }//class_end
-}//namespace_end
+    }
+}

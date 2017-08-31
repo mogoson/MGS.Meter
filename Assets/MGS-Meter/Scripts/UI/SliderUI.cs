@@ -47,18 +47,18 @@ namespace Developer.Meter
 
             GUILayout.Label(title);
             slider = GUILayout.HorizontalSlider(slider, min, max);
-            if(slider != last)
+            if (slider != last)
             {
                 last = slider;
-                foreach(var meter in meters)
+                foreach (var meter in meters)
                 {
                     meter.mainAngle = slider;
                 }
-            }//if()_end
+            }
 
             GUILayout.EndVertical();
             GUILayout.EndHorizontal();
-        }//OnGUI()_end
+        }
         #endregion
-    }//class_end
-}//namespace_end
+    }
+}

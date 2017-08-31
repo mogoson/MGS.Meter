@@ -34,7 +34,7 @@ namespace Developer.Meter
         protected virtual void OnEnable()
         {
             minSpeed = serializedObject.FindProperty("minSpeed");
-        }//OnEnable()_end
+        }
         #endregion
 
         #region Public Method
@@ -45,8 +45,8 @@ namespace Developer.Meter
             {
                 EditorGUILayout.PropertyField(minSpeed);
                 serializedObject.ApplyModifiedProperties();
-            }//if()_end
-        }//OnInspectorGUI()_end
+            }
+        }
         #endregion
-    }//class_end
-}//namespace_end
+    }
+}

@@ -45,7 +45,7 @@ namespace Developer.Meter
 
             GUILayout.EndVertical();
             GUILayout.EndHorizontal();
-        }//OnGUI()_end
+        }
         #endregion
-    }//class_end
-}//namespace_end
+    }
+}

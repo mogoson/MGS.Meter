@@ -37,7 +37,7 @@ namespace Developer.Meter
         /// Ratio of meter pointer.
         /// </summary>
         public float pRatio;
-    }//struct_end
+    }
 
     [AddComponentMenu("Developer/Meter/Meter")]
     public class Meter : MonoBehaviour
@@ -68,7 +68,7 @@ namespace Developer.Meter
             {
                 return mAngle;
             }
-        }//mainAngle_end
+        }
 
         /// <summary>
         /// Angle of main pointer.
@@ -83,8 +83,8 @@ namespace Developer.Meter
             for (int i = 0; i < pointers.Length; i++)
             {
                 startAngles[i] = pointers[i].pTrans.localEulerAngles;
-            }//for()_end
-        }//Awake()_end
+            }
+        }
 
         /// <summary>
         /// On main pointer's angle changed.
@@ -92,7 +92,7 @@ namespace Developer.Meter
         protected virtual void OnMainAngleChanged()
         {
             SetPointersAngle(mAngle);
-        }//OnM...()_end
+        }
 
         /// <summary>
         /// Set pointers angle.
@@ -105,8 +105,8 @@ namespace Developer.Meter
                 var pAngle = mainPointerAngle * pointers[i].pRatio;
                 var euler = startAngles[i] + Vector3.back * pAngle;
                 pointers[i].pTrans.localRotation = Quaternion.Euler(euler);
-            }//for()_end
-        }//SetP...()_end
+            }
+        }
         #endregion
-    }//class_end
-}//namespace_end
+    }
+}

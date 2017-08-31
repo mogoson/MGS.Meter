@@ -39,7 +39,7 @@ namespace Developer.Meter
         protected virtual void OnSceneGUI()
         {
             DrawPointers(script.pointers);
-        }//OnSceneGUI()_end
+        }
 
         protected void DrawPointers(MPointer[] pointers)
         {
@@ -55,8 +55,8 @@ namespace Developer.Meter
                     DrawArrow(pointer.pTrans.position, pointer.pTrans.forward, arrowLength, nodeSize, "Axis", blue);
                     DrawArrow(pointer.pTrans.position, pointer.pTrans.up, areaRadius, nodeSize, string.Empty, blue);
                 }
-            }//foreach()_end
-        }//DrawPointers()_end
+            }
+        }
 
         protected void DrawArrow(Vector3 start, Vector3 direction, float length, float size, string text, Color color)
         {
@@ -73,7 +73,7 @@ namespace Developer.Meter
 
             GUI.color = gC;
             Handles.color = hC;
-        }//DrawArrow()_end
+        }
         #endregion
-    }//class_end
-}//namespace_end
+    }
+}

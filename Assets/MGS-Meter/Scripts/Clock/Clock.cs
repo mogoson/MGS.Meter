@@ -53,7 +53,7 @@ namespace Developer.Meter
                 audioSource.playOnAwake = audioSource.loop = false;
             }
             lastSecond = DateTime.Now.Second;
-        }//Start()_end
+        }
 
         protected virtual void Update()
         {
@@ -71,7 +71,7 @@ namespace Developer.Meter
             //Play tick.
             if (audioSource)
                 audioSource.PlayOneShot(audioSource.clip);
-        }//UpdateClock()_end
+        }
 
         /// <summary>
         /// Set pointer local rotation.
@@ -81,7 +81,7 @@ namespace Developer.Meter
         protected void SetLocalRotation(int index, float angle)
         {
             pointers[index].localRotation = Quaternion.Euler(Vector3.back * angle);
-        }//SetL...()_end
+        }
         #endregion
 
         #region Public Method
@@ -92,7 +92,7 @@ namespace Developer.Meter
         {
             lastSecond = DateTime.Now.Second;
             enabled = true;
-        }//TurnOn()_end
+        }
 
         /// <summary>
         /// Turn off clock.
@@ -100,7 +100,7 @@ namespace Developer.Meter
         public void TurnOff()
         {
             enabled = false;
-        }//TurnOff()_end
+        }
         #endregion
-    }//class_end
-}//namespace_end
+    }
+}

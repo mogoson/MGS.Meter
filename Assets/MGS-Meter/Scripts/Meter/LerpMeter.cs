@@ -27,7 +27,7 @@ namespace Developer.Meter
     public enum LerpType
     {
         Lerp, Towards
-    }//enum_end
+    }
 
     /// <summary>
     /// Meter Lerp Event.
@@ -84,7 +84,7 @@ namespace Developer.Meter
             CheckLerp();
             if (enabled && OnLerpStart != null)
                 OnLerpStart();
-        }//OnM...()_end
+        }
 
         /// <summary>
         /// Drive pointers to target angle.
@@ -107,7 +107,7 @@ namespace Developer.Meter
                 OnLerpStay();
             if (!enabled && OnLerpExit != null)
                 OnLerpExit();
-        }//Update()_end
+        }
 
         /// <summary>
         /// Check angle lerp.
@@ -115,7 +115,7 @@ namespace Developer.Meter
         protected void CheckLerp()
         {
             enabled = mAngle - lerpAngle != 0;
-        }//CheckL...()_end
+        }
         #endregion
-    }//class_end
-}//namespace_end
+    }
+}
