@@ -1,26 +1,19 @@
 ﻿/*************************************************************************
- *  Copyright (C), 2016-2017, Mogoson tech. Co., Ltd.
- *  FileName: LerpMeter.cs
- *  Author: Mogoson   Version: 1.0   Date: 4/4/2016
- *  Version Description:
- *    Internal develop version,mainly to achieve its function.
- *  File Description:
- *    Ignore.
- *  Class List:
- *    <ID>           <name>             <description>
- *     1.          LerpMeter               Ignore.
- *  Function List:
- *    <class ID>     <name>             <description>
- *     1.
- *  History:
- *    <ID>    <author>      <time>      <version>      <description>
- *     1.     Mogoson     4/4/2016       1.0        Build this file.
+ *  Copyright (C), 2016-2017, Mogoson Tech. Co., Ltd.
+ *------------------------------------------------------------------------
+ *  File         :  LerpMeter.cs
+ *  Description  :  Define lerp Meter.
+ *------------------------------------------------------------------------
+ *  Author       :  Mogoson
+ *  Version      :  0.1.0
+ *  Date         :  4/4/2016
+ *  Description  :  Initial development version.
  *************************************************************************/
+
+using UnityEngine;
 
 namespace Developer.Meter
 {
-    using UnityEngine;
-
     /// <summary>
     /// Meter Lerp Type.
     /// </summary>
@@ -101,8 +94,10 @@ namespace Developer.Meter
             }
             else
                 lerpAngle = Mathf.MoveTowards(lerpAngle, mAngle, mainSpeed * Time.deltaTime);
+
             SetPointersAngle(lerpAngle);
             CheckLerp();
+
             if (OnLerpStay != null)
                 OnLerpStay();
             if (!enabled && OnLerpExit != null)
@@ -110,7 +105,7 @@ namespace Developer.Meter
         }
 
         /// <summary>
-        /// Check angle lerp.
+        /// Check need lerp angle.
         /// </summary>
         protected void CheckLerp()
         {

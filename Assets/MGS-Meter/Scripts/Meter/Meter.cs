@@ -1,27 +1,20 @@
 ﻿/*************************************************************************
- *  Copyright (C), 2016-2017, Mogoson tech. Co., Ltd.
- *  FileName: Meter.cs
- *  Author: Mogoson   Version: 1.0   Date: 4/4/2016
- *  Version Description:
- *    Internal develop version,mainly to achieve its function.
- *  File Description:
- *    Ignore.
- *  Class List:
- *    <ID>           <name>             <description>
- *     1.             Meter                Ignore.
- *  Function List:
- *    <class ID>     <name>             <description>
- *     1.
- *  History:
- *    <ID>    <author>      <time>      <version>      <description>
- *     1.     Mogoson     4/4/2016       1.0        Build this file.
+ *  Copyright (C), 2016-2017, Mogoson Tech. Co., Ltd.
+ *------------------------------------------------------------------------
+ *  File         :  Meter.cs
+ *  Description  :  Define pointer meter.
+ *------------------------------------------------------------------------
+ *  Author       :  Mogoson
+ *  Version      :  0.1.0
+ *  Date         :  4/4/2016
+ *  Description  :  Initial development version.
  *************************************************************************/
+
+using System;
+using UnityEngine;
 
 namespace Developer.Meter
 {
-    using System;
-    using UnityEngine;
-
     /// <summary>
     /// Meter Pointer.
     /// </summary>
@@ -47,7 +40,7 @@ namespace Developer.Meter
         /// Pointers of meter.
         /// First is main pointer.
         /// </summary>
-        public MPointer[] pointers;
+        public MPointer[] pointers = { };
 
         /// <summary>
         /// Pointers start angles.
@@ -102,8 +95,7 @@ namespace Developer.Meter
         {
             for (int i = 0; i < pointers.Length; i++)
             {
-                var pAngle = mainPointerAngle * pointers[i].pRatio;
-                var euler = startAngles[i] + Vector3.back * pAngle;
+                var euler = startAngles[i] + Vector3.back * mainPointerAngle * pointers[i].pRatio;
                 pointers[i].pTrans.localRotation = Quaternion.Euler(euler);
             }
         }

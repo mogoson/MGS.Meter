@@ -1,38 +1,33 @@
 ﻿/*************************************************************************
- *  Copyright (C), 2016-2017, Mogoson tech. Co., Ltd.
- *  FileName: MeterEditor.cs
- *  Author: Mogoson   Version: 1.0   Date: 4/4/2016
- *  Version Description:
- *    Internal develop version,mainly to achieve its function.
- *  File Description:
- *    Ignore.
- *  Class List:
- *    <ID>           <name>             <description>
- *     1.         MeterEditor              Ignore.
- *  Function List:
- *    <class ID>     <name>             <description>
- *     1.
- *  History:
- *    <ID>    <author>      <time>      <version>      <description>
- *     1.     Mogoson     4/4/2016       1.0        Build this file.
+ *  Copyright (C), 2016-2017, Mogoson Tech. Co., Ltd.
+ *------------------------------------------------------------------------
+ *  File         :  MeterEditor.cs
+ *  Description  :  Editor for Meter component.
+ *------------------------------------------------------------------------
+ *  Author       :  Mogoson
+ *  Version      :  0.1.0
+ *  Date         :  4/4/2016
+ *  Description  :  Initial development version.
  *************************************************************************/
+
+using UnityEditor;
+using UnityEngine;
 
 namespace Developer.Meter
 {
-    using UnityEditor;
-    using UnityEngine;
-
     [CustomEditor(typeof(Meter), true)]
     [CanEditMultipleObjects]
     public class MeterEditor : Editor
     {
         #region Property and Field
+        protected Meter script { get { return target as Meter; } }
+
         protected Color blue = new Color(0, 1, 1, 1);
         protected Color transparentBlue = new Color(0, 1, 1, 0.1f);
+
         protected float nodeSize = 0.05f;
         protected float arrowLength = 0.75f;
         protected float areaRadius = 0.5f;
-        protected Meter script { get { return target as Meter; } }
         #endregion
 
         #region Protected Method
@@ -50,8 +45,8 @@ namespace Developer.Meter
                     Handles.color = transparentBlue;
                     Handles.DrawSolidDisc(pointer.pTrans.position, pointer.pTrans.forward, areaRadius);
                     Handles.color = blue;
-                    Handles.SphereCap(0, pointer.pTrans.position, Quaternion.identity, nodeSize);
-                    Handles.CircleCap(0, pointer.pTrans.position, pointer.pTrans.rotation, areaRadius);
+                    DrawSphereCap(pointer.pTrans.position, Quaternion.identity, nodeSize);
+                    DrawCircleCap(pointer.pTrans.position, pointer.pTrans.rotation, areaRadius);
                     DrawArrow(pointer.pTrans.position, pointer.pTrans.forward, arrowLength, nodeSize, "Axis", blue);
                     DrawArrow(pointer.pTrans.position, pointer.pTrans.up, areaRadius, nodeSize, string.Empty, blue);
                 }
@@ -68,11 +63,29 @@ namespace Developer.Meter
 
             var end = start + direction * length;
             Handles.DrawLine(start, end);
-            Handles.SphereCap(0, end, Quaternion.identity, size);
+            DrawSphereCap(end, Quaternion.identity, size);
             Handles.Label(end, text);
 
             GUI.color = gC;
             Handles.color = hC;
+        }
+
+        protected void DrawSphereCap(Vector3 position, Quaternion rotation, float size)
+        {
+#if UNITY_5_5_OR_NEWER
+            Handles.SphereHandleCap(0, position, rotation, size, EventType.Ignore);
+#else
+            Handles.SphereCap(0, position, rotation, size);
+#endif
+        }
+
+        protected void DrawCircleCap(Vector3 position, Quaternion rotation, float size)
+        {
+#if UNITY_5_5_OR_NEWER
+            Handles.CircleHandleCap(0, position, rotation, size, EventType.Ignore);
+#else
+            Handles.CircleCap(0, position, rotation, size);
+#endif
         }
         #endregion
     }

@@ -1,26 +1,19 @@
 ﻿/*************************************************************************
- *  Copyright (C), 2016-2017, Mogoson tech. Co., Ltd.
- *  FileName: ClockUI.cs
- *  Author: Mogoson   Version: 1.0   Date: 4/5/2016
- *  Version Description:
- *    Internal develop version,mainly to achieve its function.
- *  File Description:
- *    Ignore.
- *  Class List:
- *    <ID>           <name>             <description>
- *     1.            ClockUI               Ignore.
- *  Function List:
- *    <class ID>     <name>             <description>
- *     1.
- *  History:
- *    <ID>    <author>      <time>      <version>      <description>
- *     1.     Mogoson     4/5/2016       1.0        Build this file.
+ *  Copyright (C), 2016-2017, Mogoson Tech. Co., Ltd.
+ *------------------------------------------------------------------------
+ *  File         :  ClockUI.cs
+ *  Description  :  Draw UI in scene to control clock.
+ *------------------------------------------------------------------------
+ *  Author       :  Mogoson
+ *  Version      :  0.1.0
+ *  Date         :  4/5/2016
+ *  Description  :  Initial development version.
  *************************************************************************/
+
+using UnityEngine;
 
 namespace Developer.Meter
 {
-    using UnityEngine;
-
     [AddComponentMenu("Developer/Meter/ClockUI")]
     public class ClockUI : MonoBehaviour
     {
@@ -31,16 +24,16 @@ namespace Developer.Meter
         #endregion
 
         #region Private Method
-        void OnGUI()
+        private void OnGUI()
         {
             GUILayout.Space(yOffset);
             GUILayout.BeginHorizontal();
             GUILayout.Space(xOffset);
             GUILayout.BeginVertical();
 
-            if (GUILayout.Button("TurnOn"))
+            if (GUILayout.Button("Turn On"))
                 clock.TurnOn();
-            if (GUILayout.Button("TurnOff"))
+            if (GUILayout.Button("Turn Off"))
                 clock.TurnOff();
 
             GUILayout.EndVertical();

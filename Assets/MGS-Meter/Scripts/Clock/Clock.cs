@@ -1,34 +1,27 @@
 ﻿/*************************************************************************
- *  Copyright (C), 2016-2017, Mogoson tech. Co., Ltd.
- *  FileName: Clock.cs
- *  Author: Mogoson   Version: 1.0   Date: 4/5/2016
- *  Version Description:
- *    Internal develop version,mainly to achieve its function.
- *  File Description:
- *    Ignore.
- *  Class List:
- *    <ID>           <name>             <description>
- *     1.            Clock                 Ignore.
- *  Function List:
- *    <class ID>     <name>             <description>
- *     1.
- *  History:
- *    <ID>    <author>      <time>      <version>      <description>
- *     1.     Mogoson     4/5/2016       1.0        Build this file.
+ *  Copyright (C), 2016-2017, Mogoson Tech. Co., Ltd.
+ *------------------------------------------------------------------------
+ *  File         :  Clock.cs
+ *  Description  :  Define clock.
+ *------------------------------------------------------------------------
+ *  Author       :  Mogoson
+ *  Version      :  0.1.0
+ *  Date         :  4/5/2016
+ *  Description  :  Initial development version.
  *************************************************************************/
+
+using System;
+using UnityEngine;
 
 namespace Developer.Meter
 {
-    using System;
-    using UnityEngine;
-
     [AddComponentMenu("Developer/Meter/Clock")]
     public class Clock : MonoBehaviour
     {
         #region Property and Field
         /// <summary>
         /// Pointer of clock.
-        /// Hour, minute, second pointer.
+        /// Hour, Minute, Second pointer.
         /// </summary>
         public Transform[] pointers = new Transform[3];
 

@@ -1,26 +1,19 @@
 ﻿/*************************************************************************
- *  Copyright (C), 2016-2017, Mogoson tech. Co., Ltd.
- *  FileName: LerpMeterEditor.cs
- *  Author: Mogoson   Version: 1.0   Date: 4/4/2016
- *  Version Description:
- *    Internal develop version,mainly to achieve its function.
- *  File Description:
- *    Ignore.
- *  Class List:
- *    <ID>           <name>             <description>
- *     1.        LerpMeterEditor           Ignore.
- *  Function List:
- *    <class ID>     <name>             <description>
- *     1.
- *  History:
- *    <ID>    <author>      <time>      <version>      <description>
- *     1.     Mogoson     4/4/2016       1.0        Build this file.
+ *  Copyright (C), 2016-2017, Mogoson Tech. Co., Ltd.
+ *------------------------------------------------------------------------
+ *  File         :  LerpMeterEditor.cs
+ *  Description  :  Editor for LerpMeter component.
+ *------------------------------------------------------------------------
+ *  Author       :  Mogoson
+ *  Version      :  0.1.0
+ *  Date         :  4/4/2016
+ *  Description  :  Initial development version.
  *************************************************************************/
+
+using UnityEditor;
 
 namespace Developer.Meter
 {
-    using UnityEditor;
-
     [CustomEditor(typeof(LerpMeter), true)]
     [CanEditMultipleObjects]
     public class LerpMeterEditor : MeterEditor
