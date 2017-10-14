@@ -22,12 +22,12 @@ namespace Developer.Meter
         #region Property and Field
         protected Meter script { get { return target as Meter; } }
 
-        protected Color blue = new Color(0, 1, 1, 1);
-        protected Color transparentBlue = new Color(0, 1, 1, 0.1f);
+        protected readonly Color blue = new Color(0, 1, 1, 1);
+        protected readonly Color transparentBlue = new Color(0, 1, 1, 0.1f);
 
-        protected float nodeSize = 0.05f;
-        protected float arrowLength = 0.75f;
-        protected float areaRadius = 0.5f;
+        protected const float nodeSize = 0.05f;
+        protected const float arrowLength = 0.75f;
+        protected const float areaRadius = 0.5f;
         #endregion
 
         #region Protected Method
