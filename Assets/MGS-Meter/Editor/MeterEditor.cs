@@ -36,19 +36,19 @@ namespace Developer.Meter
             DrawPointers(script.pointers);
         }
 
-        protected void DrawPointers(MPointer[] pointers)
+        protected void DrawPointers(MeterPointer[] pointers)
         {
             foreach (var pointer in pointers)
             {
-                if (pointer.pTrans)
+                if (pointer.pointerTrans)
                 {
                     Handles.color = transparentBlue;
-                    Handles.DrawSolidDisc(pointer.pTrans.position, pointer.pTrans.forward, areaRadius);
+                    Handles.DrawSolidDisc(pointer.pointerTrans.position, pointer.pointerTrans.forward, areaRadius);
                     Handles.color = blue;
-                    DrawSphereCap(pointer.pTrans.position, Quaternion.identity, nodeSize);
-                    DrawCircleCap(pointer.pTrans.position, pointer.pTrans.rotation, areaRadius);
-                    DrawArrow(pointer.pTrans.position, pointer.pTrans.forward, arrowLength, nodeSize, "Axis", blue);
-                    DrawArrow(pointer.pTrans.position, pointer.pTrans.up, areaRadius, nodeSize, string.Empty, blue);
+                    DrawSphereCap(pointer.pointerTrans.position, Quaternion.identity, nodeSize);
+                    DrawCircleCap(pointer.pointerTrans.position, pointer.pointerTrans.rotation, areaRadius);
+                    DrawArrow(pointer.pointerTrans.position, pointer.pointerTrans.forward, arrowLength, nodeSize, "Axis", blue);
+                    DrawArrow(pointer.pointerTrans.position, pointer.pointerTrans.up, areaRadius, nodeSize, string.Empty, blue);
                 }
             }
         }

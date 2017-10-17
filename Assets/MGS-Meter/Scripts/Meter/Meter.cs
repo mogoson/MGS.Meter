@@ -19,17 +19,33 @@ namespace Developer.Meter
     /// Meter Pointer.
     /// </summary>
     [Serializable]
-    public struct MPointer
+    public class MeterPointer
     {
         /// <summary>
         /// Transform of meter pointer.
         /// </summary>
-        public Transform pTrans;
+        public Transform pointerTrans;
 
         /// <summary>
         /// Ratio of meter pointer.
         /// </summary>
-        public float pRatio;
+        public float pointerRatio = 1.0f;
+
+        /// <summary>
+        /// Default Constructor.
+        /// </summary>
+        public MeterPointer() { }
+
+        /// <summary>
+        /// Constructor of MeterPointer.
+        /// </summary>
+        /// <param name="pTrans">Transform of meter pointer.</param>
+        /// <param name="pRatio">Ratio of meter pointer.</param>
+        public MeterPointer(Transform pointerTrans, float pointerRatio)
+        {
+            this.pointerTrans = pointerTrans;
+            this.pointerRatio = pointerRatio;
+        }
     }
 
     [AddComponentMenu("Developer/Meter/Meter")]
@@ -40,7 +56,7 @@ namespace Developer.Meter
         /// Pointers of meter.
         /// First is main pointer.
         /// </summary>
-        public MPointer[] pointers = { };
+        public MeterPointer[] pointers = { };
 
         /// <summary>
         /// Pointers start angles.
@@ -75,7 +91,7 @@ namespace Developer.Meter
             startAngles = new Vector3[pointers.Length];
             for (int i = 0; i < pointers.Length; i++)
             {
-                startAngles[i] = pointers[i].pTrans.localEulerAngles;
+                startAngles[i] = pointers[i].pointerTrans.localEulerAngles;
             }
         }
 
@@ -95,8 +111,8 @@ namespace Developer.Meter
         {
             for (int i = 0; i < pointers.Length; i++)
             {
-                var euler = startAngles[i] + Vector3.back * mainPointerAngle * pointers[i].pRatio;
-                pointers[i].pTrans.localRotation = Quaternion.Euler(euler);
+                var euler = startAngles[i] + Vector3.back * mainPointerAngle * pointers[i].pointerRatio;
+                pointers[i].pointerTrans.localRotation = Quaternion.Euler(euler);
             }
         }
         #endregion
