@@ -19,7 +19,7 @@ namespace Developer.Meter
     /// Meter Pointer.
     /// </summary>
     [Serializable]
-    public class MeterPointer
+    public struct MeterPointer
     {
         /// <summary>
         /// Transform of meter pointer.
@@ -29,12 +29,7 @@ namespace Developer.Meter
         /// <summary>
         /// Ratio of meter pointer.
         /// </summary>
-        public float pointerRatio = 1.0f;
-
-        /// <summary>
-        /// Default Constructor.
-        /// </summary>
-        public MeterPointer() { }
+        public float pointerRatio;
 
         /// <summary>
         /// Constructor of MeterPointer.
