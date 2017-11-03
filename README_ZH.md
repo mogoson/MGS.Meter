@@ -1,4 +1,4 @@
-# MGS-Meter
+﻿# MGS-Meter
 - [English Manual](./README.md)
 
 ## 概述
@@ -31,11 +31,11 @@
 ## 图示
 - Clock
 
-![Clock](./Attachments/Clock.png)﻿
+![Clock](./Attachments/Clock.gif)﻿
 
 - Meter
 
-![Meter](./Attachments/Meter.png)﻿
+![Meter](./Attachments/Meter.gif)﻿
 
 ## 联系
 - 如果你有任何问题或者建议，欢迎通过mogoson@qq.com联系我。

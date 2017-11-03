@@ -1,4 +1,4 @@
-# MGS-Meter
+﻿# MGS-Meter
 - [中文手册](./README_ZH.md)
 
 ## Summary
@@ -25,11 +25,11 @@
 ## Preview
 - Clock
 
-![Clock](./Attachments/Clock.png)﻿
+![Clock](./Attachments/Clock.gif)﻿
 
 - Meter
 
-![Meter](./Attachments/Meter.png)﻿
+![Meter](./Attachments/Meter.gif)﻿
 
 ## Contact
-- If you have any questions, fell free to contact me at mogoson@qq.com.
+- If you have any questions, feel free to contact me at mogoson@qq.com.
