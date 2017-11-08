@@ -25,11 +25,11 @@
 ## Preview
 - Clock
 
-![Clock](./Attachments/Clock.gif)﻿
+![Clock](./Attachments/README_Image/Clock.gif)﻿
 
 - Meter
 
-![Meter](./Attachments/Meter.gif)﻿
+![Meter](./Attachments/README_Image/Meter.gif)﻿
 
 ## Contact
 - If you have any questions, feel free to contact me at mogoson@qq.com.

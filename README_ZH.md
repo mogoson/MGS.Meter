@@ -28,14 +28,14 @@
 - “MGS-Meter/Prefabs”目录下存有上述时钟和仪表预制，供读者参考。
 - “MGS-Meter/Scenes”目录下存有上述功能的演示案例，供读者参考。
 
-## 图示
+## 预览
 - Clock
 
-![Clock](./Attachments/Clock.gif)﻿
+![Clock](./Attachments/README_Image/Clock.gif)﻿
 
 - Meter
 
-![Meter](./Attachments/Meter.gif)﻿
+![Meter](./Attachments/README_Image/Meter.gif)﻿
 
 ## 联系
 - 如果你有任何问题或者建议，欢迎通过mogoson@qq.com联系我。
