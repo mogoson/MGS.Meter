@@ -34,6 +34,7 @@ namespace Developer.Meter
         public override void OnInspectorGUI()
         {
             DrawDefaultInspector();
+
             if (script.lerpType == LerpType.Lerp)
             {
                 EditorGUILayout.PropertyField(minSpeed);

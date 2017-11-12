@@ -44,6 +44,7 @@ namespace Developer.Meter
                 {
                     Handles.color = transparentBlue;
                     Handles.DrawSolidDisc(pointer.pointerTrans.position, pointer.pointerTrans.forward, areaRadius);
+
                     Handles.color = blue;
                     DrawSphereCap(pointer.pointerTrans.position, Quaternion.identity, nodeSize);
                     DrawCircleCap(pointer.pointerTrans.position, pointer.pointerTrans.rotation, areaRadius);
@@ -55,8 +56,8 @@ namespace Developer.Meter
 
         protected void DrawArrow(Vector3 start, Vector3 direction, float length, float size, string text, Color color)
         {
-            var gC = GUI.color;
-            var hC = Handles.color;
+            var gColor = GUI.color;
+            var hColor = Handles.color;
 
             GUI.color = color;
             Handles.color = color;
@@ -66,14 +67,15 @@ namespace Developer.Meter
             DrawSphereCap(end, Quaternion.identity, size);
             Handles.Label(end, text);
 
-            GUI.color = gC;
-            Handles.color = hC;
+            GUI.color = gColor;
+            Handles.color = hColor;
         }
 
         protected void DrawSphereCap(Vector3 position, Quaternion rotation, float size)
         {
 #if UNITY_5_5_OR_NEWER
-            Handles.SphereHandleCap(0, position, rotation, size, EventType.Ignore);
+            if (Event.current.type == EventType.Repaint)
+                Handles.SphereHandleCap(0, position, rotation, size, EventType.Repaint);
 #else
             Handles.SphereCap(0, position, rotation, size);
 #endif
@@ -82,7 +84,8 @@ namespace Developer.Meter
         protected void DrawCircleCap(Vector3 position, Quaternion rotation, float size)
         {
 #if UNITY_5_5_OR_NEWER
-            Handles.CircleHandleCap(0, position, rotation, size, EventType.Ignore);
+            if (Event.current.type == EventType.Repaint)
+                Handles.CircleHandleCap(0, position, rotation, size, EventType.Repaint);
 #else
             Handles.CircleCap(0, position, rotation, size);
 #endif
