@@ -20,7 +20,7 @@ namespace Developer.Meter
     public class MeterEditor : Editor
     {
         #region Property and Field
-        protected Meter script { get { return target as Meter; } }
+        protected Meter Script { get { return target as Meter; } }
 
         protected readonly Color blue = new Color(0, 1, 1, 1);
         protected readonly Color transparentBlue = new Color(0, 1, 1, 0.1f);
@@ -33,7 +33,7 @@ namespace Developer.Meter
         #region Protected Method
         protected virtual void OnSceneGUI()
         {
-            DrawPointers(script.pointers);
+            DrawPointers(Script.pointers);
         }
 
         protected void DrawPointers(MeterPointer[] pointers)
@@ -62,7 +62,7 @@ namespace Developer.Meter
             GUI.color = color;
             Handles.color = color;
 
-            var end = start + direction * length;
+            var end = start + direction.normalized * length;
             Handles.DrawLine(start, end);
             DrawSphereCap(end, Quaternion.identity, size);
             Handles.Label(end, text);

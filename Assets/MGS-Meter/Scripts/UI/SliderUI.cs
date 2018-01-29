@@ -43,7 +43,7 @@ namespace Developer.Meter
             if (slider != last)
             {
                 last = slider;
-                meter.mainAngle = slider;
+                meter.MainAngle = slider;
             }
 
             GUILayout.EndVertical();

@@ -20,13 +20,13 @@ namespace Developer.Meter
     public class ClockEditor : MeterEditor
     {
         #region Property and Field
-        protected new Clock script { get { return target as Clock; } }
+        protected new Clock Script { get { return target as Clock; } }
         #endregion
 
         #region Protected Method
         protected override void OnSceneGUI()
         {
-            DrawPointers(script.pointers);
+            DrawPointers(Script.pointers);
         }
 
         protected void DrawPointers(Transform[] pointers)

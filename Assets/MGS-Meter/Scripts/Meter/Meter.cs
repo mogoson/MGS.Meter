@@ -56,57 +56,58 @@ namespace Developer.Meter
         /// <summary>
         /// Pointers start angles.
         /// </summary>
-        public Vector3[] startAngles { private set; get; }
+        public Vector3[] StartAngles { protected set; get; }
 
         /// <summary>
         /// Angle of main pointer.
         /// </summary>
-        public float mainAngle
+        public float MainAngle
         {
             set
             {
-                mAngle = value;
-                OnMainAngleChanged();
+                mainPointerAngle = value;
+                OnMainAngleChanged(mainPointerAngle);
             }
             get
             {
-                return mAngle;
+                return mainPointerAngle;
             }
         }
 
         /// <summary>
         /// Angle of main pointer.
         /// </summary>
-        protected float mAngle = 0;
+        protected float mainPointerAngle = 0;
         #endregion
 
         #region Protected Method
         protected virtual void Awake()
         {
-            startAngles = new Vector3[pointers.Length];
+            StartAngles = new Vector3[pointers.Length];
             for (int i = 0; i < pointers.Length; i++)
             {
-                startAngles[i] = pointers[i].pointerTrans.localEulerAngles;
+                StartAngles[i] = pointers[i].pointerTrans.localEulerAngles;
             }
         }
 
         /// <summary>
         /// On main pointer's angle changed.
         /// </summary>
-        protected virtual void OnMainAngleChanged()
+        /// <param name="mainAngle">Main pointer's angle.</param>
+        protected virtual void OnMainAngleChanged(float mainAngle)
         {
-            SetPointersAngle(mAngle);
+            SetPointersAngle(mainAngle);
         }
 
         /// <summary>
         /// Set pointers angle.
         /// </summary>
-        /// <param name="mainPointerAngle">Main pointer's angle.</param>
-        protected void SetPointersAngle(float mainPointerAngle)
+        /// <param name="mainAngle">Main pointer's angle.</param>
+        protected void SetPointersAngle(float mainAngle)
         {
             for (int i = 0; i < pointers.Length; i++)
             {
-                var euler = startAngles[i] + Vector3.back * mainPointerAngle * pointers[i].pointerRatio;
+                var euler = StartAngles[i] + Vector3.back * mainAngle * pointers[i].pointerRatio;
                 pointers[i].pointerTrans.localRotation = Quaternion.Euler(euler);
             }
         }

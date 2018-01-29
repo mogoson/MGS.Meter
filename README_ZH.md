@@ -33,9 +33,9 @@
 
 ![Clock](./Attachments/README_Image/Clock.gif)﻿
 
-- Meter
+- LerpMeter
 
-![Meter](./Attachments/README_Image/Meter.gif)﻿
+![LerpMeter](./Attachments/README_Image/LerpMeter.gif)﻿
 
 ## 联系
 - 如果你有任何问题或者建议，欢迎通过mogoson@qq.com联系我。

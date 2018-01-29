@@ -19,7 +19,8 @@ namespace Developer.Meter
     /// </summary>
     public enum LerpType
     {
-        Lerp, Towards
+        Lerp = 0,
+        Towards = 1
     }
 
     /// <summary>
@@ -65,16 +66,17 @@ namespace Developer.Meter
         /// <summary>
         /// Current lerp value of main angle.
         /// </summary>
-        public float lerpAngle { protected set; get; }
+        public float LerpAngle { protected set; get; }
         #endregion
 
         #region Protected Method
         /// <summary>
         /// On main pointer's angle changed.
         /// </summary>
-        protected override void OnMainAngleChanged()
+        /// <param name="mainAngle">Main pointer's angle.</param>
+        protected override void OnMainAngleChanged(float mainAngle)
         {
-            CheckLerp();
+            CheckLerp(mainAngle);
             if (enabled && OnLerpStart != null)
                 OnLerpStart();
         }
@@ -86,20 +88,22 @@ namespace Developer.Meter
         {
             if (lerpType == LerpType.Lerp)
             {
-                var lastLerp = lerpAngle;
-                lerpAngle = Mathf.Lerp(lerpAngle, mAngle, mainSpeed / 180 * Time.deltaTime);
-                var lerpSpeed = Mathf.Abs((lerpAngle - lastLerp) / Time.deltaTime);
+                var lastLerp = LerpAngle;
+                LerpAngle = Mathf.Lerp(LerpAngle, mainPointerAngle, mainSpeed / 180 * Time.deltaTime);
+
+                var lerpSpeed = Mathf.Abs((LerpAngle - lastLerp) / Time.deltaTime);
                 if (lerpSpeed < minSpeed)
-                    lerpAngle = Mathf.MoveTowards(lastLerp, mAngle, minSpeed * Time.deltaTime);
+                    LerpAngle = Mathf.MoveTowards(lastLerp, mainPointerAngle, minSpeed * Time.deltaTime);
             }
             else
-                lerpAngle = Mathf.MoveTowards(lerpAngle, mAngle, mainSpeed * Time.deltaTime);
+                LerpAngle = Mathf.MoveTowards(LerpAngle, mainPointerAngle, mainSpeed * Time.deltaTime);
 
-            SetPointersAngle(lerpAngle);
-            CheckLerp();
+            SetPointersAngle(LerpAngle);
+            CheckLerp(mainPointerAngle);
 
             if (OnLerpStay != null)
                 OnLerpStay();
+
             if (!enabled && OnLerpExit != null)
                 OnLerpExit();
         }
@@ -107,9 +111,10 @@ namespace Developer.Meter
         /// <summary>
         /// Check need lerp angle.
         /// </summary>
-        protected void CheckLerp()
+        /// <param name="mainAngle">Main pointer's angle.</param>
+        protected void CheckLerp(float mainAngle)
         {
-            enabled = mAngle - lerpAngle != 0;
+            enabled = mainAngle - LerpAngle != 0;
         }
         #endregion
     }

@@ -81,7 +81,7 @@ namespace Developer.Meter
         /// <summary>
         /// Turn on clock.
         /// </summary>
-        public void TurnOn()
+        public virtual void TurnOn()
         {
             lastSecond = DateTime.Now.Second;
             enabled = true;
@@ -90,7 +90,7 @@ namespace Developer.Meter
         /// <summary>
         /// Turn off clock.
         /// </summary>
-        public void TurnOff()
+        public virtual void TurnOff()
         {
             enabled = false;
         }

@@ -19,7 +19,7 @@ namespace Developer.Meter
     public class LerpMeterEditor : MeterEditor
     {
         #region Property and Field
-        protected new LerpMeter script { get { return target as LerpMeter; } }
+        protected new LerpMeter Script { get { return target as LerpMeter; } }
         protected SerializedProperty minSpeed;
         #endregion
 
@@ -35,7 +35,7 @@ namespace Developer.Meter
         {
             DrawDefaultInspector();
 
-            if (script.lerpType == LerpType.Lerp)
+            if (Script.lerpType == LerpType.Lerp)
             {
                 EditorGUILayout.PropertyField(minSpeed);
                 serializedObject.ApplyModifiedProperties();
