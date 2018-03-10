@@ -1,7 +1,7 @@
-==========================================================================
-  Copyright (C), 2016-2017, Mogoson Tech. Co., Ltd.
+﻿==========================================================================
+  Copyright © 2016-2018 Mogoson. All rights reserved.
   Name: MGS-Meter
-  Author: Mogoson   Version: 0.1.0   Date: 4/5/2016
+  Author: Mogoson   Version: 0.1.0   Date: 3/9/2018
 ==========================================================================
   [Summary]
     Unity plugin for make Clock and Meter in scene.

@@ -1,12 +1,12 @@
 ﻿/*************************************************************************
- *  Copyright (C), 2016-2017, Mogoson Tech. Co., Ltd.
+ *  Copyright © 2016-2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
  *  File         :  LerpMeterEditor.cs
  *  Description  :  Editor for LerpMeter component.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
- *  Date         :  4/4/2016
+ *  Date         :  3/9/2018
  *  Description  :  Initial development version.
  *************************************************************************/
 
@@ -18,8 +18,8 @@ namespace Developer.Meter
     [CanEditMultipleObjects]
     public class LerpMeterEditor : MeterEditor
     {
-        #region Property and Field
-        protected new LerpMeter Script { get { return target as LerpMeter; } }
+        #region Field and Property 
+        protected new LerpMeter Target { get { return target as LerpMeter; } }
         protected SerializedProperty minSpeed;
         #endregion
 
@@ -35,7 +35,7 @@ namespace Developer.Meter
         {
             DrawDefaultInspector();
 
-            if (Script.lerpType == LerpType.Lerp)
+            if (Target.lerpType == LerpType.Lerp)
             {
                 EditorGUILayout.PropertyField(minSpeed);
                 serializedObject.ApplyModifiedProperties();

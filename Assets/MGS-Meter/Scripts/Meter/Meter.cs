@@ -1,12 +1,12 @@
 ﻿/*************************************************************************
- *  Copyright (C), 2016-2017, Mogoson Tech. Co., Ltd.
+ *  Copyright © 2016-2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
  *  File         :  Meter.cs
  *  Description  :  Define pointer meter.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
- *  Date         :  4/4/2016
+ *  Date         :  3/9/2018
  *  Description  :  Initial development version.
  *************************************************************************/
 
@@ -46,7 +46,7 @@ namespace Developer.Meter
     [AddComponentMenu("Developer/Meter/Meter")]
     public class Meter : MonoBehaviour
     {
-        #region Property and Field
+        #region Field and Property 
         /// <summary>
         /// Pointers of meter.
         /// First is main pointer.
@@ -68,10 +68,7 @@ namespace Developer.Meter
                 mainPointerAngle = value;
                 OnMainAngleChanged(mainPointerAngle);
             }
-            get
-            {
-                return mainPointerAngle;
-            }
+            get { return mainPointerAngle; }
         }
 
         /// <summary>

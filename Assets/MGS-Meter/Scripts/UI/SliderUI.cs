@@ -1,12 +1,12 @@
 ﻿/*************************************************************************
- *  Copyright (C), 2016-2017, Mogoson Tech. Co., Ltd.
+ *  Copyright © 2016-2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
  *  File         :  SliderUI.cs
  *  Description  :  Draw slider UI in scene to control meter.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
- *  Date         :  4/5/2016
+ *  Date         :  3/9/2018
  *  Description  :  Initial development version.
  *************************************************************************/
 
@@ -17,7 +17,7 @@ namespace Developer.Meter
     [AddComponentMenu("Developer/Meter/SliderUI")]
     public class SliderUI : MonoBehaviour
     {
-        #region Property and Field
+        #region Field and Property 
         [Multiline]
         public string title;
         public float xOffset = 10;

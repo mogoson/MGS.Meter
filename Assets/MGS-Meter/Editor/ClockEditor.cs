@@ -1,12 +1,12 @@
 ﻿/*************************************************************************
- *  Copyright (C), 2016-2017, Mogoson Tech. Co., Ltd.
+ *  Copyright © 2016-2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
  *  File         :  ClockEditor.cs
  *  Description  :  Editor for Clock component.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
- *  Date         :  4/4/2016
+ *  Date         :  3/9/2018
  *  Description  :  Initial development version.
  *************************************************************************/
 
@@ -19,30 +19,30 @@ namespace Developer.Meter
     [CanEditMultipleObjects]
     public class ClockEditor : MeterEditor
     {
-        #region Property and Field
-        protected new Clock Script { get { return target as Clock; } }
+        #region Field and Property 
+        protected new Clock Target { get { return target as Clock; } }
         #endregion
 
         #region Protected Method
         protected override void OnSceneGUI()
         {
-            DrawPointers(Script.pointers);
+            DrawPointer(Target.pointer.hour);
+            DrawPointer(Target.pointer.minute);
+            DrawPointer(Target.pointer.second);
         }
 
-        protected void DrawPointers(Transform[] pointers)
+        protected void DrawPointer(Transform pointer)
         {
-            foreach (var pointer in pointers)
+            if (pointer)
             {
-                if (pointer)
-                {
-                    Handles.color = transparentBlue;
-                    Handles.DrawSolidDisc(pointer.position, pointer.forward, areaRadius);
-                    Handles.color = blue;
-                    DrawSphereCap(pointer.position, Quaternion.identity, nodeSize);
-                    DrawCircleCap(pointer.position, pointer.rotation, areaRadius);
-                    DrawArrow(pointer.position, pointer.forward, arrowLength, nodeSize, "Axis", blue);
-                    DrawArrow(pointer.position, pointer.up, areaRadius, nodeSize, string.Empty, blue);
-                }
+                Handles.color = TransparentBlue;
+                Handles.DrawSolidDisc(pointer.position, pointer.forward, AreaRadius);
+
+                Handles.color = Blue;
+                DrawSphereCap(pointer.position, Quaternion.identity, NodeSize);
+                DrawCircleCap(pointer.position, pointer.rotation, AreaRadius);
+                DrawSphereArrow(pointer.position, pointer.forward, ArrowLength, NodeSize, Blue, "Axis");
+                DrawSphereArrow(pointer.position, pointer.up, AreaRadius, NodeSize, Blue, string.Empty);
             }
         }
         #endregion

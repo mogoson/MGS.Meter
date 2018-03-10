@@ -1,15 +1,16 @@
 ﻿/*************************************************************************
- *  Copyright (C), 2016-2017, Mogoson Tech. Co., Ltd.
+ *  Copyright © 2016-2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
  *  File         :  LerpMeter.cs
  *  Description  :  Define lerp Meter.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
- *  Date         :  4/4/2016
+ *  Date         :  3/9/2018
  *  Description  :  Initial development version.
  *************************************************************************/
 
+using System;
 using UnityEngine;
 
 namespace Developer.Meter
@@ -23,15 +24,10 @@ namespace Developer.Meter
         Towards = 1
     }
 
-    /// <summary>
-    /// Meter Lerp Event.
-    /// </summary>
-    public delegate void LerpEvent();
-
     [AddComponentMenu("Developer/Meter/LerpMeter")]
     public class LerpMeter : Meter
     {
-        #region Property and Field
+        #region Field and Property 
         /// <summary>
         /// Meter lerp type.
         /// </summary>
@@ -49,24 +45,24 @@ namespace Developer.Meter
         public float minSpeed = 30;
 
         /// <summary>
-        /// Call on start lerp.
-        /// </summary>
-        public LerpEvent OnLerpStart;
-
-        /// <summary>
-        /// Call on stay lerp.
-        /// </summary>
-        public LerpEvent OnLerpStay;
-
-        /// <summary>
-        /// Call on exit lerp.
-        /// </summary>
-        public LerpEvent OnLerpExit;
-
-        /// <summary>
         /// Current lerp value of main angle.
         /// </summary>
         public float LerpAngle { protected set; get; }
+
+        /// <summary>
+        /// Event on start lerp.
+        /// </summary>
+        public event Action OnLerpStart;
+
+        /// <summary>
+        /// Event on stay lerp.
+        /// </summary>
+        public event Action OnLerpStay;
+
+        /// <summary>
+        /// Event on exit lerp.
+        /// </summary>
+        public event Action OnLerpExit;
         #endregion
 
         #region Protected Method
@@ -77,8 +73,11 @@ namespace Developer.Meter
         protected override void OnMainAngleChanged(float mainAngle)
         {
             CheckLerp(mainAngle);
-            if (enabled && OnLerpStart != null)
-                OnLerpStart();
+            if (enabled)
+            {
+                if (OnLerpStart != null)
+                    OnLerpStart.Invoke();
+            }
         }
 
         /// <summary>
@@ -102,10 +101,13 @@ namespace Developer.Meter
             CheckLerp(mainPointerAngle);
 
             if (OnLerpStay != null)
-                OnLerpStay();
+                OnLerpStay.Invoke();
 
-            if (!enabled && OnLerpExit != null)
-                OnLerpExit();
+            if (!enabled)
+            {
+                if (OnLerpExit != null)
+                    OnLerpExit.Invoke();
+            }
         }
 
         /// <summary>

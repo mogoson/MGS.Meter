@@ -1,12 +1,12 @@
 ﻿/*************************************************************************
- *  Copyright (C), 2016-2017, Mogoson Tech. Co., Ltd.
+ *  Copyright © 2016-2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
  *  File         :  Clock.cs
  *  Description  :  Define clock.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
- *  Date         :  4/5/2016
+ *  Date         :  3/9/2018
  *  Description  :  Initial development version.
  *************************************************************************/
 
@@ -15,18 +15,52 @@ using UnityEngine;
 
 namespace Developer.Meter
 {
+    /// <summary>
+    /// Pointers of clock.
+    /// </summary>
+    [Serializable]
+    public struct ClockPointer
+    {
+        /// <summary>
+        /// Hour pointer of clock.
+        /// </summary>
+        public Transform hour;
+
+        /// <summary>
+        /// Minute pointer of clock.
+        /// </summary>
+        public Transform minute;
+
+        /// <summary>
+        /// Second pointer of clock.
+        /// </summary>
+        public Transform second;
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="hour">Hour pointer of clock.</param>
+        /// <param name="minute">Minute pointer of clock.</param>
+        /// <param name="second">Second pointer of clock.</param>
+        public ClockPointer(Transform hour, Transform minute, Transform second)
+        {
+            this.hour = hour;
+            this.minute = minute;
+            this.second = second;
+        }
+    }
+
     [AddComponentMenu("Developer/Meter/Clock")]
     public class Clock : MonoBehaviour
     {
-        #region Property and Field
+        #region Field and Property 
         /// <summary>
         /// Pointer of clock.
-        /// Hour, Minute, Second pointer.
         /// </summary>
-        public Transform[] pointers = new Transform[3];
+        public ClockPointer pointer;
 
         /// <summary>
-        /// Last record second.
+        /// Record last second.
         /// </summary>
         protected int lastSecond;
 
@@ -57,9 +91,9 @@ namespace Developer.Meter
             lastSecond = DateTime.Now.Second;
 
             //Update pointers angle.
-            SetLocalRotation(0, DateTime.Now.Hour % 12 * 30 + DateTime.Now.Minute * 0.5f + lastSecond / 120);
-            SetLocalRotation(1, DateTime.Now.Minute * 6 + lastSecond * 0.1f);
-            SetLocalRotation(2, lastSecond * 6);
+            SetPointerAngle(pointer.hour, DateTime.Now.Hour % 12 * 30 + DateTime.Now.Minute * 0.5f + lastSecond / 120);
+            SetPointerAngle(pointer.minute, DateTime.Now.Minute * 6 + lastSecond * 0.1f);
+            SetPointerAngle(pointer.second, lastSecond * 6);
 
             //Play tick.
             if (audioSource)
@@ -67,13 +101,13 @@ namespace Developer.Meter
         }
 
         /// <summary>
-        /// Set pointer local rotation.
+        /// Set pointer local rotation angle.
         /// </summary>
-        /// <param name="index">Pointer's index.</param>
-        /// <param name="angle">Angle of z axis.</param>
-        protected void SetLocalRotation(int index, float angle)
+        /// <param name="pointer">Transform of pointer.</param>
+        /// <param name="angle">Angle of pointer.</param>
+        protected void SetPointerAngle(Transform pointer, float angle)
         {
-            pointers[index].localRotation = Quaternion.Euler(Vector3.back * angle);
+            pointer.localRotation = Quaternion.Euler(Vector3.back * angle);
         }
         #endregion
 
