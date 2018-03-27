@@ -13,7 +13,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Developer.Meter
+namespace Mogoson.Meter
 {
     [CustomEditor(typeof(Clock), true)]
     [CanEditMultipleObjects]
@@ -41,7 +41,7 @@ namespace Developer.Meter
                 Handles.color = Blue;
                 DrawSphereCap(pointer.position, Quaternion.identity, NodeSize);
                 DrawCircleCap(pointer.position, pointer.rotation, AreaRadius);
-                DrawSphereArrow(pointer.position, pointer.forward, ArrowLength, NodeSize, Blue, "Axis");
+                DrawSphereArrow(pointer.position, -pointer.forward, ArrowLength, NodeSize, Blue, "Axis");
                 DrawSphereArrow(pointer.position, pointer.up, AreaRadius, NodeSize, Blue, string.Empty);
             }
         }

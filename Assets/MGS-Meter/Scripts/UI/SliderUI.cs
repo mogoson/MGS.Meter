@@ -12,9 +12,8 @@
 
 using UnityEngine;
 
-namespace Developer.Meter
+namespace Mogoson.Meter
 {
-    [AddComponentMenu("Developer/Meter/SliderUI")]
     public class SliderUI : MonoBehaviour
     {
         #region Field and Property 
@@ -27,7 +26,7 @@ namespace Developer.Meter
         public Meter meter;
 
         private float slider = 0;
-        private float last = 0;
+        private float lastSlider = 0;
         #endregion
 
         #region Private Method
@@ -40,9 +39,9 @@ namespace Developer.Meter
 
             GUILayout.Label(title);
             slider = GUILayout.HorizontalSlider(slider, min, max, GUILayout.Width(250));
-            if (slider != last)
+            if (slider != lastSlider)
             {
-                last = slider;
+                lastSlider = slider;
                 meter.MainAngle = slider;
             }
 

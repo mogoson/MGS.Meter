@@ -12,7 +12,7 @@
 
 using UnityEditor;
 
-namespace Developer.Meter
+namespace Mogoson.Meter
 {
     [CustomEditor(typeof(LerpMeter), true)]
     [CanEditMultipleObjects]
@@ -37,8 +37,10 @@ namespace Developer.Meter
 
             if (Target.lerpType == LerpType.Lerp)
             {
+                EditorGUI.BeginChangeCheck();
                 EditorGUILayout.PropertyField(minSpeed);
-                serializedObject.ApplyModifiedProperties();
+                if (EditorGUI.EndChangeCheck())
+                    serializedObject.ApplyModifiedProperties();
             }
         }
         #endregion

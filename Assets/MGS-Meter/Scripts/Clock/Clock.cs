@@ -13,7 +13,7 @@
 using System;
 using UnityEngine;
 
-namespace Developer.Meter
+namespace Mogoson.Meter
 {
     /// <summary>
     /// Pointers of clock.
@@ -50,7 +50,7 @@ namespace Developer.Meter
         }
     }
 
-    [AddComponentMenu("Developer/Meter/Clock")]
+    [AddComponentMenu("Mogoson/Meter/Clock")]
     public class Clock : MonoBehaviour
     {
         #region Field and Property 

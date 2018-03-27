@@ -13,7 +13,7 @@
 using System;
 using UnityEngine;
 
-namespace Developer.Meter
+namespace Mogoson.Meter
 {
     /// <summary>
     /// Meter Lerp Type.
@@ -24,7 +24,7 @@ namespace Developer.Meter
         Towards = 1
     }
 
-    [AddComponentMenu("Developer/Meter/LerpMeter")]
+    [AddComponentMenu("Mogoson/Meter/LerpMeter")]
     public class LerpMeter : Meter
     {
         #region Field and Property 

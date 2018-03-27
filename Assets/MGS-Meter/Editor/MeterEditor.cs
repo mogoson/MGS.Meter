@@ -10,11 +10,11 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
-using Developer.EditorExtension;
+using Mogoson.EditorExtension;
 using UnityEditor;
 using UnityEngine;
 
-namespace Developer.Meter
+namespace Mogoson.Meter
 {
     [CustomEditor(typeof(Meter), true)]
     [CanEditMultipleObjects]
@@ -22,6 +22,10 @@ namespace Developer.Meter
     {
         #region Field and Property
         protected Meter Target { get { return target as Meter; } }
+
+        protected new const float AreaRadius = 0.1f;
+        protected new const float ArrowLength = 0.25f;
+        protected new const float NodeSize = 0.02f;
         #endregion
 
         #region Protected Method
@@ -42,7 +46,7 @@ namespace Developer.Meter
                     Handles.color = Blue;
                     DrawSphereCap(pointer.pointerTrans.position, Quaternion.identity, NodeSize);
                     DrawCircleCap(pointer.pointerTrans.position, pointer.pointerTrans.rotation, AreaRadius);
-                    DrawSphereArrow(pointer.pointerTrans.position, pointer.pointerTrans.forward, ArrowLength, NodeSize, Blue, "Axis");
+                    DrawSphereArrow(pointer.pointerTrans.position, -pointer.pointerTrans.forward, ArrowLength, NodeSize, Blue, "Axis");
                     DrawSphereArrow(pointer.pointerTrans.position, pointer.pointerTrans.up, AreaRadius, NodeSize, Blue, string.Empty);
                 }
             }

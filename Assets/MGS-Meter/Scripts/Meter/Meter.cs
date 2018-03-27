@@ -13,7 +13,7 @@
 using System;
 using UnityEngine;
 
-namespace Developer.Meter
+namespace Mogoson.Meter
 {
     /// <summary>
     /// Meter Pointer.
@@ -43,7 +43,7 @@ namespace Developer.Meter
         }
     }
 
-    [AddComponentMenu("Developer/Meter/Meter")]
+    [AddComponentMenu("Mogoson/Meter/Meter")]
     public class Meter : MonoBehaviour
     {
         #region Field and Property 
