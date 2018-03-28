@@ -30,21 +30,6 @@ namespace Mogoson.Meter
             DrawPointer(Target.pointer.minute);
             DrawPointer(Target.pointer.second);
         }
-
-        protected void DrawPointer(Transform pointer)
-        {
-            if (pointer)
-            {
-                Handles.color = TransparentBlue;
-                Handles.DrawSolidDisc(pointer.position, pointer.forward, AreaRadius);
-
-                Handles.color = Blue;
-                DrawSphereCap(pointer.position, Quaternion.identity, NodeSize);
-                DrawCircleCap(pointer.position, pointer.rotation, AreaRadius);
-                DrawSphereArrow(pointer.position, -pointer.forward, ArrowLength, NodeSize, Blue, "Axis");
-                DrawSphereArrow(pointer.position, pointer.up, AreaRadius, NodeSize, Blue, string.Empty);
-            }
-        }
         #endregion
     }
 }

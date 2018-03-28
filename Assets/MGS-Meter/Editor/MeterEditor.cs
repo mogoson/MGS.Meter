@@ -31,24 +31,24 @@ namespace Mogoson.Meter
         #region Protected Method
         protected virtual void OnSceneGUI()
         {
-            DrawPointers(Target.pointers);
+            foreach (var pointer in Target.pointers)
+            {
+                DrawPointer(pointer.pointerTrans);
+            }
         }
 
-        protected void DrawPointers(MeterPointer[] pointers)
+        protected void DrawPointer(Transform pointer)
         {
-            foreach (var pointer in pointers)
+            if (pointer)
             {
-                if (pointer.pointerTrans)
-                {
-                    Handles.color = TransparentBlue;
-                    Handles.DrawSolidDisc(pointer.pointerTrans.position, pointer.pointerTrans.forward, AreaRadius);
+                Handles.color = TransparentBlue;
+                Handles.DrawSolidDisc(pointer.position, pointer.forward, AreaRadius);
 
-                    Handles.color = Blue;
-                    DrawSphereCap(pointer.pointerTrans.position, Quaternion.identity, NodeSize);
-                    DrawCircleCap(pointer.pointerTrans.position, pointer.pointerTrans.rotation, AreaRadius);
-                    DrawSphereArrow(pointer.pointerTrans.position, -pointer.pointerTrans.forward, ArrowLength, NodeSize, Blue, "Axis");
-                    DrawSphereArrow(pointer.pointerTrans.position, pointer.pointerTrans.up, AreaRadius, NodeSize, Blue, string.Empty);
-                }
+                Handles.color = Blue;
+                DrawSphereCap(pointer.position, Quaternion.identity, NodeSize);
+                DrawCircleCap(pointer.position, pointer.rotation, AreaRadius);
+                DrawSphereArrow(pointer.position, -pointer.forward, ArrowLength, NodeSize, Blue, "Axis");
+                DrawSphereArrow(pointer.position, pointer.up, AreaRadius, NodeSize, Blue, string.Empty);
             }
         }
         #endregion
