@@ -11,7 +11,6 @@
  *************************************************************************/
 
 using UnityEditor;
-using UnityEngine;
 
 namespace Mogoson.Meter
 {
