@@ -24,7 +24,7 @@ namespace Mogoson.Meter
         protected Meter Target { get { return target as Meter; } }
 
         protected new const float AreaRadius = 0.1f;
-        protected new const float ArrowLength = 0.25f;
+        protected new const float ArrowLength = 0.15f;
         protected new const float NodeSize = 0.02f;
         #endregion
 
