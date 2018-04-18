@@ -16,7 +16,7 @@ using UnityEngine;
 namespace Mogoson.Meter
 {
     /// <summary>
-    /// Meter Lerp Type.
+    /// Lerp type of meter pointers.
     /// </summary>
     public enum LerpType
     {
@@ -24,6 +24,9 @@ namespace Mogoson.Meter
         Towards = 1
     }
 
+    /// <summary>
+    /// Meter with lerp rotate pointers.
+    /// </summary>
     [AddComponentMenu("Mogoson/Meter/LerpMeter")]
     public class LerpMeter : Meter
     {

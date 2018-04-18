@@ -43,6 +43,9 @@ namespace Mogoson.Meter
         }
     }
 
+    /// <summary>
+    /// Meter with pointers.
+    /// </summary>
     [AddComponentMenu("Mogoson/Meter/Meter")]
     public class Meter : MonoBehaviour
     {
