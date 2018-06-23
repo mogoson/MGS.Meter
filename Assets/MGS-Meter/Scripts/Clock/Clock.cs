@@ -54,7 +54,7 @@ namespace Mogoson.Meter
     /// Clock with Hour, Minute and Second pointers.
     /// </summary>
     [AddComponentMenu("Mogoson/Meter/Clock")]
-    public class Clock : MonoBehaviour
+    public class Clock : MonoBehaviour, IClock
     {
         #region Field and Property 
         /// <summary>

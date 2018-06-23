@@ -22,10 +22,6 @@ namespace Mogoson.Meter
     {
         #region Field and Property
         protected Meter Target { get { return target as Meter; } }
-
-        protected new const float AreaRadius = 0.1f;
-        protected new const float ArrowLength = 0.15f;
-        protected new const float NodeSize = 0.02f;
         #endregion
 
         #region Protected Method
@@ -42,13 +38,14 @@ namespace Mogoson.Meter
             if (pointer)
             {
                 Handles.color = TransparentBlue;
-                Handles.DrawSolidDisc(pointer.position, pointer.forward, AreaRadius);
+                DrawAdaptiveSolidDisc(pointer.position, pointer.forward, AreaRadius);
 
                 Handles.color = Blue;
-                DrawSphereCap(pointer.position, Quaternion.identity, NodeSize);
-                DrawCircleCap(pointer.position, pointer.rotation, AreaRadius);
-                DrawSphereArrow(pointer.position, -pointer.forward, ArrowLength, NodeSize, Blue, "Axis");
-                DrawSphereArrow(pointer.position, pointer.up, AreaRadius, NodeSize, Blue, string.Empty);
+                DrawAdaptiveSphereCap(pointer.position, Quaternion.identity, NodeSize);
+                DrawAdaptiveCircleCap(pointer.position, pointer.rotation, AreaRadius);
+
+                DrawAdaptiveSphereArrow(pointer.position, -pointer.forward, ArrowLength, NodeSize, "Axis");
+                DrawAdaptiveSphereArrow(pointer.position, pointer.up, AreaRadius, NodeSize);
             }
         }
         #endregion
