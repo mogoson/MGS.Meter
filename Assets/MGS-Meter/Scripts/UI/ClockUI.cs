@@ -14,6 +14,7 @@ using UnityEngine;
 
 namespace Mogoson.Meter
 {
+    [AddComponentMenu("Mogoson/Meter/ClockUI")]
     public class ClockUI : MonoBehaviour
     {
         #region Field and Property 

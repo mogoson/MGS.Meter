@@ -44,7 +44,6 @@ namespace Mogoson.Meter
         /// <summary>
         /// Min speed of main pointer.
         /// </summary>
-        [HideInInspector]
         public float minSpeed = 30;
 
         /// <summary>
