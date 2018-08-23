@@ -27,9 +27,9 @@
 
 ![Clock](./Attachments/README_Image/Clock.gif)﻿
 
-- LerpMeter
+- Lerp Meter
 
-![LerpMeter](./Attachments/README_Image/LerpMeter.gif)﻿
+![Lerp Meter](./Attachments/README_Image/LerpMeter.gif)﻿
 
 ## Contact
-- If you have any questions, feel free to contact me at mogoson@qq.com.
+- If you have any questions, feel free to contact me at mogoson@outlook.com.
