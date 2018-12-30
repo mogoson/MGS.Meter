@@ -20,8 +20,8 @@ namespace Mogoson.Meter
         #region Field and Property 
         [Multiline]
         public string title;
-        public float xOffset = 10;
-        public float yOffset = 10;
+        public float top = 10;
+        public float left = 10;
         public float min = 0;
         public float max = 360;
         public Meter meter;
@@ -33,9 +33,9 @@ namespace Mogoson.Meter
         #region Private Method
         private void OnGUI()
         {
-            GUILayout.Space(yOffset);
+            GUILayout.Space(top);
             GUILayout.BeginHorizontal();
-            GUILayout.Space(xOffset);
+            GUILayout.Space(left);
             GUILayout.BeginVertical();
 
             GUILayout.Label(title);

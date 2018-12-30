@@ -17,24 +17,28 @@ namespace Mogoson.Meter
     [AddComponentMenu("Mogoson/Meter/ClockUI")]
     public class ClockUI : MonoBehaviour
     {
-        #region Field and Property 
-        public float xOffset = 10;
-        public float yOffset = 10;
+        #region Field and Property
+        public float top = 10;
+        public float left = 10;
         public Clock clock;
         #endregion
 
         #region Private Method
         private void OnGUI()
         {
-            GUILayout.Space(yOffset);
+            GUILayout.Space(top);
             GUILayout.BeginHorizontal();
-            GUILayout.Space(xOffset);
+            GUILayout.Space(left);
             GUILayout.BeginVertical();
 
             if (GUILayout.Button("Turn On"))
+            {
                 clock.TurnOn();
+            }
             if (GUILayout.Button("Turn Off"))
+            {
                 clock.TurnOff();
+            }
 
             GUILayout.EndVertical();
             GUILayout.EndHorizontal();

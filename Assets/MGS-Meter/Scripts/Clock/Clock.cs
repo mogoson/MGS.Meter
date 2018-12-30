@@ -88,7 +88,9 @@ namespace Mogoson.Meter
         protected virtual void Update()
         {
             if (lastSecond == DateTime.Now.Second)
+            {
                 return;
+            }
 
             //Record last second.
             lastSecond = DateTime.Now.Second;
@@ -100,7 +102,9 @@ namespace Mogoson.Meter
 
             //Play tick.
             if (audioSource)
+            {
                 audioSource.PlayOneShot(audioSource.clip);
+            }
         }
 
         /// <summary>

@@ -78,7 +78,9 @@ namespace Mogoson.Meter
             if (enabled)
             {
                 if (OnLerpStart != null)
+                {
                     OnLerpStart.Invoke();
+                }
             }
         }
 
@@ -94,21 +96,29 @@ namespace Mogoson.Meter
 
                 var lerpSpeed = Mathf.Abs((LerpAngle - lastLerp) / Time.deltaTime);
                 if (lerpSpeed < minSpeed)
+                {
                     LerpAngle = Mathf.MoveTowards(lastLerp, mainPointerAngle, minSpeed * Time.deltaTime);
+                }
             }
             else
+            {
                 LerpAngle = Mathf.MoveTowards(LerpAngle, mainPointerAngle, mainSpeed * Time.deltaTime);
+            }
 
             SetPointersAngle(LerpAngle);
             CheckLerp(mainPointerAngle);
 
             if (OnLerpStay != null)
+            {
                 OnLerpStay.Invoke();
+            }
 
             if (!enabled)
             {
                 if (OnLerpExit != null)
+                {
                     OnLerpExit.Invoke();
+                }
             }
         }
 
