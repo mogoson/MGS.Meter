@@ -11,7 +11,7 @@
 
 ## Environment
 - Unity 5.0 or above.
-- .Net Framework 3.0 or above.
+- .Net Framework 3.5 or above.
 
 ## Achieve
 - Clock : Auto update the angles of Clock pointers base on system time.
@@ -25,11 +25,11 @@
 ## Preview
 - Clock
 
-![Clock](./Attachments/README_Image/Clock.gif)﻿
+![Clock](./Attachment/README_Image/Clock.gif)﻿
 
 - Lerp Meter
 
-![Lerp Meter](./Attachments/README_Image/LerpMeter.gif)﻿
+![Lerp Meter](./Attachment/README_Image/LerpMeter.gif)﻿
 
 ## Contact
 - If you have any questions, feel free to contact me at mogoson@outlook.com.

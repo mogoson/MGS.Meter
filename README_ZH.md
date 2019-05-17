@@ -11,7 +11,7 @@
 
 ## 环境
 - Unity 5.0 或更高版本。
-- .Net Framework 3.0 或更高版本。
+- .Net Framework 3.5 或更高版本。
 
 ## 方案
 - 时钟指针：每秒获取系统当前时间，计算时针，分针和秒针对应的旋转角度。
@@ -31,11 +31,11 @@
 ## 预览
 - Clock
 
-![Clock](./Attachments/README_Image/Clock.gif)﻿
+![Clock](./Attachment/README_Image/Clock.gif)﻿
 
 - Lerp Meter
 
-![LerpMeter](./Attachments/README_Image/LerpMeter.gif)﻿
+![LerpMeter](./Attachment/README_Image/LerpMeter.gif)﻿
 
 ## 联系
 - 如果你有任何问题或者建议，欢迎通过mogoson@outlook.com联系我。
