@@ -144,17 +144,17 @@
             Current lerp value of main angle.
             </summary>
         </member>
-        <member name="E:MGS.Meter.LerpPointerMeter.OnLerpStart">
+        <member name="P:MGS.Meter.LerpPointerMeter.OnLerpStart">
             <summary>
             Event on start lerp.
             </summary>
         </member>
-        <member name="E:MGS.Meter.LerpPointerMeter.OnLerpStay">
+        <member name="P:MGS.Meter.LerpPointerMeter.OnLerpStay">
             <summary>
             Event on stay lerp.
             </summary>
         </member>
-        <member name="E:MGS.Meter.LerpPointerMeter.OnLerpExit">
+        <member name="P:MGS.Meter.LerpPointerMeter.OnLerpExit">
             <summary>
             Event on exit lerp.
             </summary>
