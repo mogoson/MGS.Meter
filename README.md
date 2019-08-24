@@ -1,5 +1,4 @@
 ﻿# MGS-Meter
-- [中文手册](./README_ZH.md)
 
 ## Summary
 - Unity plugin for make Clock and Meter in scene.
