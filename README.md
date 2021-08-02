@@ -1,34 +1,51 @@
-﻿# MGS-Meter
+[TOC]
+
+﻿# MGS.Meter
 
 ## Summary
 - Unity plugin for make Clock and Meter in scene.
 
+## Environment
+- .Net Framework 3.5 or above.
+- Unity 5.0 or above.
+
+## Platform
+
+- Windows
+
 ## Demand
+
 - Standard Clock with Hour, Minute and Second pointers.
 - Normal Meter with multi pointers.
 - Lerp Meter with multi pointers smooth rotate.
 
-## Environment
-- Unity 5.0 or above.
-- .Net Framework 3.5 or above.
+## Implemented
+```C#
+public struct ClockPointer{}
+public class PointerClock : MonoBehaviour, IClock{}
 
-## Achieve
-- Clock : Auto update the angles of Clock pointers base on system time.
-- Meter : Update the angles of pointers when the value of Meter changed.
-- LerpMeter : Smooth lerp the angles of pointers when the value of Meter changed.
+public struct MeterPointer{}
+public class PointerMeter : MonoBehaviour, IPointerMeter{}
+public class LerpPointerMeter : PointerMeter{}
+```
+
+## Usage
+
+1. Add the component to your game object.
+2. Set the parameters of the component.
 
 ## Demo
-- Prefabs in the path "MGS-Meter/Prefabs" provide reference to you.
-- Demos in the path "MGS-Meter/Scenes" provide reference to you.
+- Demos in the path "MGS.Packages/Meter/Demo/" provide reference to you.
 
 ## Preview
 - Clock
 
-![Clock](./Attachment/README_Image/Clock.gif)﻿
+![Clock](./Attachment/images/Clock.gif)﻿
 
 - Lerp Meter
 
-![Lerp Meter](./Attachment/README_Image/LerpMeter.gif)﻿
+![Lerp Meter](./Attachment/images/LerpMeter.gif)﻿
 
-## Contact
-- If you have any questions, feel free to contact me at mogoson@outlook.com.
+------
+
+Copyright © 2021 Mogoson.	mogoson@outlook.com
