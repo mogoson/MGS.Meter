@@ -1,0 +1,260 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MGS.UMeter</name>
+    </assembly>
+    <members>
+        <member name="T:MGS.Meter.ClockPointer">
+            <summary>
+            Pointers of clock.
+            </summary>
+        </member>
+        <member name="F:MGS.Meter.ClockPointer.hour">
+            <summary>
+            Hour pointer of clock.
+            </summary>
+        </member>
+        <member name="F:MGS.Meter.ClockPointer.minute">
+            <summary>
+            Minute pointer of clock.
+            </summary>
+        </member>
+        <member name="F:MGS.Meter.ClockPointer.second">
+            <summary>
+            Second pointer of clock.
+            </summary>
+        </member>
+        <member name="M:MGS.Meter.ClockPointer.#ctor(UnityEngine.Transform,UnityEngine.Transform,UnityEngine.Transform)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="hour">Hour pointer of clock.</param>
+            <param name="minute">Minute pointer of clock.</param>
+            <param name="second">Second pointer of clock.</param>
+        </member>
+        <member name="T:MGS.Meter.PointerClock">
+            <summary>
+            Clock with Hour, Minute and Second pointers.
+            </summary>
+        </member>
+        <member name="F:MGS.Meter.PointerClock.pointer">
+            <summary>
+            Pointer of clock.
+            </summary>
+        </member>
+        <member name="F:MGS.Meter.PointerClock.lastSecond">
+            <summary>
+            Record last second.
+            </summary>
+        </member>
+        <member name="F:MGS.Meter.PointerClock.audioSource">
+            <summary>
+            Audio source of clock.
+            </summary>
+        </member>
+        <member name="M:MGS.Meter.PointerClock.Awake">
+            <summary>
+            Component awake.
+            </summary>
+        </member>
+        <member name="M:MGS.Meter.PointerClock.Update">
+            <summary>
+            Update pointer rotate angles.
+            </summary>
+        </member>
+        <member name="M:MGS.Meter.PointerClock.SetPointerAngle(UnityEngine.Transform,System.Single)">
+            <summary>
+            Set pointer local rotation angle.
+            </summary>
+            <param name="pointer">Transform of pointer.</param>
+            <param name="angle">Angle of pointer.</param>
+        </member>
+        <member name="M:MGS.Meter.PointerClock.TurnOn">
+            <summary>
+            Turn on clock.
+            </summary>
+        </member>
+        <member name="M:MGS.Meter.PointerClock.TurnOff">
+            <summary>
+            Turn off clock.
+            </summary>
+        </member>
+        <member name="T:MGS.Meter.IClock">
+            <summary>
+            Interface of clock.
+            </summary>
+        </member>
+        <member name="M:MGS.Meter.IClock.TurnOn">
+            <summary>
+            Turn on clock.
+            </summary>
+        </member>
+        <member name="M:MGS.Meter.IClock.TurnOff">
+            <summary>
+            Turn off clock.
+            </summary>
+        </member>
+        <member name="T:MGS.Meter.IPointerMeter">
+            <summary>
+            Interface of pointer meter.
+            </summary>
+        </member>
+        <member name="P:MGS.Meter.IPointerMeter.MainAngle">
+            <summary>
+            Angle of meter main pointer.
+            </summary>
+        </member>
+        <member name="T:MGS.Meter.LerpMode">
+            <summary>
+            Lerp mode.
+            </summary>
+        </member>
+        <member name="F:MGS.Meter.LerpMode.Lerp">
+            <summary>
+            Lerp mode.
+            </summary>
+        </member>
+        <member name="F:MGS.Meter.LerpMode.Towards">
+            <summary>
+            Towards mode.
+            </summary>
+        </member>
+        <member name="T:MGS.Meter.LerpPointerMeter">
+            <summary>
+            Meter with lerp rotate pointers.
+            </summary>
+        </member>
+        <member name="F:MGS.Meter.LerpPointerMeter.lerpMode">
+            <summary>
+            Meter lerp mode.
+            </summary>
+        </member>
+        <member name="F:MGS.Meter.LerpPointerMeter.mainSpeed">
+            <summary>
+            Speed of main pointer.
+            </summary>
+        </member>
+        <member name="F:MGS.Meter.LerpPointerMeter.minSpeed">
+            <summary>
+            Min speed of main pointer.
+            </summary>
+        </member>
+        <member name="P:MGS.Meter.LerpPointerMeter.LerpAngle">
+            <summary>
+            Current lerp value of main angle.
+            </summary>
+        </member>
+        <member name="E:MGS.Meter.LerpPointerMeter.OnLerpStart">
+            <summary>
+            Event on start lerp.
+            </summary>
+        </member>
+        <member name="E:MGS.Meter.LerpPointerMeter.OnLerpStay">
+            <summary>
+            Event on stay lerp.
+            </summary>
+        </member>
+        <member name="E:MGS.Meter.LerpPointerMeter.OnLerpExit">
+            <summary>
+            Event on exit lerp.
+            </summary>
+        </member>
+        <member name="M:MGS.Meter.LerpPointerMeter.OnMainAngleChanged(System.Single)">
+            <summary>
+            On main pointer's angle changed.
+            </summary>
+            <param name="mainAngle">Main pointer's angle.</param>
+        </member>
+        <member name="M:MGS.Meter.LerpPointerMeter.Update">
+            <summary>
+            Drive pointers to target angle.
+            </summary>
+        </member>
+        <member name="M:MGS.Meter.LerpPointerMeter.CheckLerp(System.Single)">
+            <summary>
+            Check need lerp angle.
+            </summary>
+            <param name="mainAngle">Main pointer's angle.</param>
+        </member>
+        <member name="M:MGS.Meter.LerpPointerMeter.InvokeOnLerpStartEvent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MGS.Meter.LerpPointerMeter.InvokeOnLerpStayEvent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MGS.Meter.LerpPointerMeter.InvokeOnLerpExitEvent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:MGS.Meter.PointerMeter">
+            <summary>
+            Meter with pointers.
+            </summary>
+        </member>
+        <member name="F:MGS.Meter.PointerMeter.pointers">
+            <summary>
+            Pointers of meter.
+            First is main pointer.
+            </summary>
+        </member>
+        <member name="P:MGS.Meter.PointerMeter.StartAngles">
+            <summary>
+            Pointers start angles.
+            </summary>
+        </member>
+        <member name="P:MGS.Meter.PointerMeter.MainAngle">
+            <summary>
+            Angle of main pointer.
+            </summary>
+        </member>
+        <member name="F:MGS.Meter.PointerMeter.mainPointerAngle">
+            <summary>
+            Angle of main pointer.
+            </summary>
+        </member>
+        <member name="M:MGS.Meter.PointerMeter.Awake">
+            <summary>
+            Component awake.
+            </summary>
+        </member>
+        <member name="M:MGS.Meter.PointerMeter.OnMainAngleChanged(System.Single)">
+            <summary>
+            On main pointer's angle changed.
+            </summary>
+            <param name="mainAngle">Main pointer's angle.</param>
+        </member>
+        <member name="M:MGS.Meter.PointerMeter.SetPointersAngle(System.Single)">
+            <summary>
+            Set pointers angle.
+            </summary>
+            <param name="mainAngle">Main pointer's angle.</param>
+        </member>
+        <member name="T:MGS.Meter.MeterPointer">
+            <summary>
+            Meter Pointer.
+            </summary>
+        </member>
+        <member name="F:MGS.Meter.MeterPointer.pointerTrans">
+            <summary>
+            Transform of meter pointer.
+            </summary>
+        </member>
+        <member name="F:MGS.Meter.MeterPointer.pointerRatio">
+            <summary>
+            Ratio of meter pointer.
+            </summary>
+        </member>
+        <member name="M:MGS.Meter.MeterPointer.#ctor(UnityEngine.Transform,System.Single)">
+            <summary>
+            Constructor of MeterPointer.
+            </summary>
+            <param name="pointerTrans">Transform of meter pointer.</param>
+            <param name="pointerRatio">Ratio of meter pointer.</param>
+        </member>
+    </members>
+</doc>
