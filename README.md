@@ -1,6 +1,6 @@
 [TOC]
 
-﻿# MGS.Meter
+# MGS.Meter
 
 ## Summary
 - Unity plugin for make Clock and Meter in scene.
