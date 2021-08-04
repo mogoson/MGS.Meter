@@ -144,17 +144,32 @@
             Current lerp value of main angle.
             </summary>
         </member>
-        <member name="E:MGS.Meter.LerpPointerMeter.OnLerpStart">
+        <member name="E:MGS.Meter.LerpPointerMeter.OnLerpStartEvent">
             <summary>
             Event on start lerp.
             </summary>
         </member>
-        <member name="E:MGS.Meter.LerpPointerMeter.OnLerpStay">
+        <member name="F:MGS.Meter.LerpPointerMeter.onLerpStartEvent">
+            <summary>
+            Event on start lerp.
+            </summary>
+        </member>
+        <member name="E:MGS.Meter.LerpPointerMeter.OnLerpStayEvent">
             <summary>
             Event on stay lerp.
             </summary>
         </member>
-        <member name="E:MGS.Meter.LerpPointerMeter.OnLerpExit">
+        <member name="F:MGS.Meter.LerpPointerMeter.onLerpStayEvent">
+            <summary>
+            Event on stay lerp.
+            </summary>
+        </member>
+        <member name="E:MGS.Meter.LerpPointerMeter.OnLerpExitEvent">
+            <summary>
+            Event on exit lerp.
+            </summary>
+        </member>
+        <member name="F:MGS.Meter.LerpPointerMeter.onLerpExitEvent">
             <summary>
             Event on exit lerp.
             </summary>
@@ -175,21 +190,6 @@
             Check need lerp angle.
             </summary>
             <param name="mainAngle">Main pointer's angle.</param>
-        </member>
-        <member name="M:MGS.Meter.LerpPointerMeter.InvokeOnLerpStartEvent">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:MGS.Meter.LerpPointerMeter.InvokeOnLerpStayEvent">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:MGS.Meter.LerpPointerMeter.InvokeOnLerpExitEvent">
-            <summary>
-            
-            </summary>
         </member>
         <member name="T:MGS.Meter.PointerMeter">
             <summary>
