@@ -1,6 +1,6 @@
 [TOC]
 
-﻿# MGS.UMeter.dll
+﻿# MGS.Meter.dll
 
 ## Summary
 - Made Pointer Clock and Meter in Unity scene.
