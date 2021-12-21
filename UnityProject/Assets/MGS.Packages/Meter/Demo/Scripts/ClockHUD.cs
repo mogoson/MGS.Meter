@@ -1,7 +1,7 @@
 ﻿/*************************************************************************
- *  Copyright © 2016-2018 Mogoson. All rights reserved.
+ *  Copyright © 2021 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
- *  File         :  PointerClockHUD.cs
+ *  File         :  ClockHUD.cs
  *  Description  :  Draw UI in scene to control clock.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
@@ -14,12 +14,12 @@ using UnityEngine;
 
 namespace MGS.Meter.Demo
 {
-    public class PointerClockHUD : MonoBehaviour
+    public class ClockHUD : MonoBehaviour
     {
         #region Field and Property
         public float top = 10;
         public float left = 10;
-        public PointerClock clock;
+        public Clock clock;
         #endregion
 
         #region Private Method

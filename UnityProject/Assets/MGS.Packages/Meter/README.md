@@ -19,16 +19,6 @@
 - Normal Meter with multi pointers.
 - Lerp Meter with multi pointers smooth rotate.
 
-## Implemented
-```C#
-public struct ClockPointer{}
-public class PointerClock : MonoBehaviour, IClock{}
-
-public struct MeterPointer{}
-public class PointerMeter : MonoBehaviour, IPointerMeter{}
-public class LerpPointerMeter : PointerMeter{}
-```
-
 ## Usage
 
 1. Add the component to your game object.

@@ -1,7 +1,7 @@
 ﻿/*************************************************************************
- *  Copyright © 2016-2018 Mogoson. All rights reserved.
+ *  Copyright © 2021 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
- *  File         :  PointerMeterHUD.cs
+ *  File         :  MeterHUD.cs
  *  Description  :  Draw slider UI in scene to control meter.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
@@ -14,7 +14,7 @@ using UnityEngine;
 
 namespace MGS.Meter.Demo
 {
-    public class PointerMeterHUD : MonoBehaviour
+    public class MeterHUD : MonoBehaviour
     {
         #region Field and Property 
         [Multiline]
@@ -23,7 +23,7 @@ namespace MGS.Meter.Demo
         public float left = 10;
         public float min = 0;
         public float max = 360;
-        public PointerMeter meter;
+        public Meter meter;
 
         private float slider = 0;
         private float lastSlider = 0;
@@ -42,7 +42,7 @@ namespace MGS.Meter.Demo
             if (slider != lastSlider)
             {
                 lastSlider = slider;
-                meter.MainAngle = slider;
+                meter.Refresh(slider, slider * 1.25f, slider * 1.5f);
             }
 
             GUILayout.EndVertical();
