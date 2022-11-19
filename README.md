@@ -27,15 +27,6 @@
 ## Demo
 - Demos in the path "MGS.Packages/Meter/Demo/" provide reference to you.
 
-## Preview
-- Clock
-
-![Clock](./Attachment/images/Clock.gif)﻿
-
-- Lerp Meter
-
-![Lerp Meter](./Attachment/images/LerpMeter.gif)﻿
-
 ------
 
 Copyright © 2021 Mogoson.	mogoson@outlook.com
