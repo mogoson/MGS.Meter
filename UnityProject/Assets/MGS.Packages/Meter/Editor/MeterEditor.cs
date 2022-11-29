@@ -37,10 +37,10 @@ namespace MGS.Meter.Editors
         {
             if (pointer)
             {
-                Handles.color = TransparentCyan;
+                Handles.color = TransparentWhite;
                 DrawAdaptiveSolidDisc(pointer.position, pointer.forward, AreaRadius);
 
-                Handles.color = Color.cyan;
+                Handles.color = Color.white;
                 DrawAdaptiveSphereCap(pointer.position, Quaternion.identity, NodeSize);
                 DrawAdaptiveCircleCap(pointer.position, pointer.rotation, AreaRadius);
 

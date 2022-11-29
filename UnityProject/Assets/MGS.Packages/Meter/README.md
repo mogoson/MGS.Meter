@@ -5,6 +5,10 @@
 ## Summary
 - Unity plugin for make Clock and Meter in scene.
 
+## Version
+
+- 1.0.1
+
 ## Environment
 - .Net Framework 3.5 or above.
 - Unity 5.0 or above.
