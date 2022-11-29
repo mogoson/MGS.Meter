@@ -7,7 +7,7 @@
 
 ## Version
 
-- 1.0.1
+- 1.1.1
 
 ## Environment
 - .Net Framework 3.5 or above.
