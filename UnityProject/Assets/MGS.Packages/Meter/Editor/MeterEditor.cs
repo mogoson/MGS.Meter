@@ -22,6 +22,9 @@ namespace MGS.Meter.Editors
     {
         #region Field and Property
         protected Meter Target { get { return target as Meter; } }
+
+        protected readonly Color AreaColor = new Color(1, 1, 1, 0.1f);
+        protected readonly Color HandleColor = Color.white;
         #endregion
 
         #region Protected Method
@@ -37,10 +40,10 @@ namespace MGS.Meter.Editors
         {
             if (pointer)
             {
-                Handles.color = TransparentWhite;
+                Handles.color = AreaColor;
                 DrawAdaptiveSolidDisc(pointer.position, pointer.forward, AreaRadius);
 
-                Handles.color = Color.white;
+                Handles.color = HandleColor;
                 DrawAdaptiveSphereCap(pointer.position, Quaternion.identity, NodeSize);
                 DrawAdaptiveCircleCap(pointer.position, pointer.rotation, AreaRadius);
 
