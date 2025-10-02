@@ -11,3 +11,5 @@
 /UnityProject/.vs
 /.vs/MGS.Meter/v16/*.suo
 /*.vsconfig
+/Logs
+/UserSettings
