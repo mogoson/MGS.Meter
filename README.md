@@ -5,28 +5,24 @@
 ## Summary
 - Unity plugin for make Clock and Meter in scene.
 
-## Environment
-- .Net Framework 3.5 or above.
-- Unity 5.0 or above.
-
-## Platform
-
-- Windows
-
-## Demand
+## Ability
 
 - Standard Clock with Hour, Minute and Second pointers.
 - Normal Meter with multi pointers.
 - Lerp Meter with multi pointers smooth rotate.
 
-## Usage
+## Install
 
-1. Add the component to your game object.
-2. Set the parameters of the component.
+- Unity --> Window --> Package Manager --> "+" --> Add package from git URL...
 
-## Demo
-- Demos in the path "MGS.Packages/Meter/Demo/" provide reference to you.
+  ```text
+  https://github.com/mogoson/MGS.Meter.git?path=/Assets
+  ```
 
-------
+## Samples
 
-Copyright © 2021 Mogoson.	mogoson@outlook.com
+- Unity --> Window --> Package Manager --> Packages-Mogoson --> Meter --> Samples.
+
+---
+
+Copyright © 2025 Mogoson.	mogoson@outlook.com

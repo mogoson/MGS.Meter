@@ -1,0 +1,16 @@
+{
+    "name": "MGS.Meter.Sample",
+    "rootNamespace": "",
+    "references": [
+        "GUID:c97d0e4aa77bc734ca207255ca8f2238"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
