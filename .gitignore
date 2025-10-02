@@ -9,3 +9,5 @@
 /Assets/ScriptTemplateToolkit.meta
 /Assets/ScriptTemplateToolkit
 /UnityProject/.vs
+/.vs/MGS.Meter/v16/*.suo
+/*.vsconfig
